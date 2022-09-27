@@ -1,0 +1,12 @@
+<div class="container mt-5">
+    <input type="text" class="form-control" [(ngModel)]="userInputTextValue">
+    <button class="btn btn-primary mt-2"
+    [disabled]="!buttonEnbaled"
+    (click)="handleSubmitButton()">
+        Submit
+    </button>
+    <p *ngIf="userInputTextValue.length != 0; else noValue">Value Not Null</p>
+    <ng-template #noValue>
+        <p>Value is Empty</p>
+    </ng-template>
+</div>
