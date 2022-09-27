@@ -5,8 +5,13 @@
     (click)="handleSubmitButton()">
         Submit
     </button>
-    <p *ngIf="userInputTextValue.length != 0; else noValue">Value Not Null</p>
+    <p [ngStyle]="{ backgroundColor: 'green' }" 
+    [ngClass]="{access: userInputTextValue.length != 0}"
+    *ngIf="userInputTextValue.length != 0; else noValue">Value Not Null</p>
     <ng-template #noValue>
-        <p>Value is Empty</p>
+        <p [ngStyle]="{
+            backgroundColor : 'red'
+        }">Value is Empty</p>
     </ng-template>
+    <p *ngFor="let user of users">{{ user }}</p>
 </div>
